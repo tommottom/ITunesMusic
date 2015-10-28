@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		277D02680760413C8AF30318 /* libPods-ITunesMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3520FA79C5D032A22F419D /* libPods-ITunesMusic.a */; };
+		AA03F5051BE0C0C000FD6512 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA03F5041BE0C0C000FD6512 /* ListViewController.swift */; };
 		AA4E549F1BE0B85A006CA811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E549E1BE0B85A006CA811 /* AppDelegate.swift */; };
-		AA4E54A11BE0B85A006CA811 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E54A01BE0B85A006CA811 /* ViewController.swift */; };
 		AA4E54A41BE0B85A006CA811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4E54A21BE0B85A006CA811 /* Main.storyboard */; };
 		AA4E54A71BE0B85A006CA811 /* ITunesMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA4E54A51BE0B85A006CA811 /* ITunesMusic.xcdatamodeld */; };
 		AA4E54A91BE0B85A006CA811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4E54A81BE0B85A006CA811 /* Assets.xcassets */; };
@@ -39,9 +39,9 @@
 /* Begin PBXFileReference section */
 		19913FB2895B2DA7E7485E7F /* Pods-ITunesMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITunesMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ITunesMusic/Pods-ITunesMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		3D3520FA79C5D032A22F419D /* libPods-ITunesMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITunesMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA03F5041BE0C0C000FD6512 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AA4E549B1BE0B85A006CA811 /* ITunesMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4E549E1BE0B85A006CA811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA4E54A01BE0B85A006CA811 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA4E54A31BE0B85A006CA811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA4E54A61BE0B85A006CA811 /* ITunesMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITunesMusic.xcdatamodel; sourceTree = "<group>"; };
 		AA4E54A81BE0B85A006CA811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				AA4E549E1BE0B85A006CA811 /* AppDelegate.swift */,
-				AA4E54A01BE0B85A006CA811 /* ViewController.swift */,
 				AA4E54A21BE0B85A006CA811 /* Main.storyboard */,
+				AA03F5041BE0C0C000FD6512 /* ListViewController.swift */,
 				AA4E54A81BE0B85A006CA811 /* Assets.xcassets */,
 				AA4E54AA1BE0B85A006CA811 /* LaunchScreen.storyboard */,
 				AA4E54AD1BE0B85B006CA811 /* Info.plist */,
@@ -345,8 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA4E54A71BE0B85A006CA811 /* ITunesMusic.xcdatamodeld in Sources */,
-				AA4E54A11BE0B85A006CA811 /* ViewController.swift in Sources */,
 				AA4E549F1BE0B85A006CA811 /* AppDelegate.swift in Sources */,
+				AA03F5051BE0C0C000FD6512 /* ListViewController.swift in Sources */,
 				AA6704A41BE0B9D6008C4C53 /* NSObject+music.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

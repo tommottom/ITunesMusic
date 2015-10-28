@@ -9,7 +9,11 @@
 import UIKit
 
 class ListViewController: UITableViewController {
+    
+    private var results: [NSDictionary]?
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,24 +33,28 @@ class ListViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return results?.count ?? 0
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ListCell
+        if let result = results?[indexPath.row] {
+            if let artworkUrl = result["artworkUrl100"] as? String {
+                cell.artworkImageView.setImageWithURL(NSURL(string: artworkUrl)!)
+            } else {
+                cell.artworkImageView.image = nil
+            }
+            cell.trackLabel.text = result["trackName"] as? String
+            cell.artistLabel.text = result["artistName"] as? String
+        }
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -92,4 +100,34 @@ class ListViewController: UITableViewController {
     }
     */
 
+}
+
+extension ListViewController: UISearchBarDelegate {
+    
+    // searchBarのSearchボタンをタップしたときの処理
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder() // キーボードを閉じる
+        
+        // url encode　例. スピッツ > %83X%83s%83b%83c
+        let text = searchBar.text!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        if let text = text {
+            AFHTTPSessionManager().GET(
+                "https://itunes.apple.com/search?term=\(text)&country=JP&lang=ja_jp&media=music",
+                parameters: nil,
+                success: { (task: NSURLSessionDataTask!, response: AnyObject!) -> Void in
+                    if let data = response as? NSDictionary, results = data["results"] as? [NSDictionary] {
+                        self.results = results
+                        self.tableView.reloadData() // 再描画
+                    }
+                },
+                failure: nil)
+        }
+    }
+}
+
+class ListCell: UITableViewCell {
+    
+    @IBOutlet weak var artworkImageView: UIImageView!
+    @IBOutlet weak var trackLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
 }
