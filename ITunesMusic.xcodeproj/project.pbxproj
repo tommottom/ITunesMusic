@@ -17,6 +17,7 @@
 		AA4E54B71BE0B85B006CA811 /* ITunesMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E54B61BE0B85B006CA811 /* ITunesMusicTests.swift */; };
 		AA4E54C21BE0B85B006CA811 /* ITunesMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E54C11BE0B85B006CA811 /* ITunesMusicUITests.swift */; };
 		AA6704A41BE0B9D6008C4C53 /* NSObject+music.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6704A31BE0B9D6008C4C53 /* NSObject+music.m */; };
+		AAD20ACB1BE0D931006CBB77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD20ACA1BE0D931006CBB77 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		AA6704A11BE0B9D5008C4C53 /* ITunesMusic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ITunesMusic-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA6704A21BE0B9D6008C4C53 /* NSObject+music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+music.h"; sourceTree = "<group>"; };
 		AA6704A31BE0B9D6008C4C53 /* NSObject+music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+music.m"; sourceTree = "<group>"; };
+		AAD20ACA1BE0D931006CBB77 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C3A73EE720B38A0A595BEE3F /* Pods-ITunesMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITunesMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-ITunesMusic/Pods-ITunesMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			children = (
 				AA4E549E1BE0B85A006CA811 /* AppDelegate.swift */,
 				AA4E54A21BE0B85A006CA811 /* Main.storyboard */,
+				AAD20ACA1BE0D931006CBB77 /* DetailViewController.swift */,
 				AA03F5041BE0C0C000FD6512 /* ListViewController.swift */,
 				AA4E54A81BE0B85A006CA811 /* Assets.xcassets */,
 				AA4E54AA1BE0B85A006CA811 /* LaunchScreen.storyboard */,
@@ -346,6 +349,7 @@
 			files = (
 				AA4E54A71BE0B85A006CA811 /* ITunesMusic.xcdatamodeld in Sources */,
 				AA4E549F1BE0B85A006CA811 /* AppDelegate.swift in Sources */,
+				AAD20ACB1BE0D931006CBB77 /* DetailViewController.swift in Sources */,
 				AA03F5051BE0C0C000FD6512 /* ListViewController.swift in Sources */,
 				AA6704A41BE0B9D6008C4C53 /* NSObject+music.m in Sources */,
 			);

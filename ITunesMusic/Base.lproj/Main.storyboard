@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!-- Music Search-->
         <scene sceneID="CPr-Hm-7yu">
             <objects>
                 <tableViewController id="ZPi-xN-INs" customClass="ListViewController" customModule="ITunesMusic" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,13 +32,13 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iM4-Rd-s4w">
                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-Ex-Iko">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-Ex-Iko">
                                             <rect key="frame" x="52" y="4" width="193" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-AN-LVL">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-AN-LVL">
                                             <rect key="frame" x="52" y="20" width="193" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -50,6 +50,7 @@
                                     <outlet property="artistLabel" destination="Hl2-AN-LVL" id="53Q-89-aVc"/>
                                     <outlet property="artworkImageView" destination="iM4-Rd-s4w" id="BML-XW-wH0"/>
                                     <outlet property="trackLabel" destination="W4M-Ex-Iko" id="HyE-c6-Jhz"/>
+                                    <segue destination="Nse-ej-CMX" kind="show" id="0AZ-dP-qMK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,7 +59,7 @@
                             <outlet property="delegate" destination="ZPi-xN-INs" id="K1R-S9-Bwh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="BGk-G4-dCf"/>
+                    <navigationItem key="navigationItem" title=" Music Search" id="BGk-G4-dCf" userLabel="Music Search"/>
                     <connections>
                         <outlet property="searchBar" destination="cwV-SQ-VhU" id="ndM-Oj-ygX"/>
                     </connections>
@@ -66,6 +67,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieq-Mw-EA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="863" y="-96"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="V0a-3H-7wc">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Nse-ej-CMX" customClass="DetailViewController" customModule="ITunesMusic" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPj-M5-I63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="-105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fz5-Xv-Prv">
@@ -81,7 +90,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7M-nV-80e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-96"/>
+            <point key="canvasLocation" x="228" y="-96"/>
         </scene>
     </scenes>
 </document>

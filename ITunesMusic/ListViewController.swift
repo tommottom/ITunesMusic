@@ -55,6 +55,11 @@ class ListViewController: UITableViewController {
         return cell
     }
     
+    
+
+   
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -90,15 +95,18 @@ class ListViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destinationViewController as? DetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow, result = results?[indexPath.row] {
+                vc.trackName = result["trackName"] as! String
+                vc.previewUrl = result["previewUrl"] as? String
+            }
+        }
     }
-    */
+    
 
 }
 
