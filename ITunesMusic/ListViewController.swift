@@ -50,6 +50,8 @@
 // データ取得ごとにこれらの設定を行わないといけません。
 // この煩わしさを解消するのが「NSURLSession」です。
 // あとは、NSDictionaryがたのresultに対して取得内容をTableViewに代入する
+// NSURL型に関して => http://d.hatena.ne.jp/nakamura001/20110421/1303404341
+
 
 //6
 // ListCellにUIImageViewやUILabelのoutletを紐づける
@@ -60,13 +62,29 @@
 // prepareForSegueに関して
 // 指定遷移先の参照に対して情報(trackNameとPreviewUrl)を渡している。
 
+//8
+// outlet Storyboard上のオブジェクトを参照する値を定義する。変数searchbarはUISearchBarを参照できる。
+// weakなので弱いつながりでしかない。
+
+//9  return results?.count ?? 0 返り値が0かどうかを判定している。
+
+//10　UITableViewControllerの詳細
+// 「cellForRowAtIndexPath:」で指定したインデックスパスのセル（UITableViewCell）を作成し，
+//　 そのインスタンスを返すように実装します．
+dequeueReusableCellWithIdentifierに関して。
+//    一度作成したセルを再利用することでパフォーマンスを向上させています．
+
+
+
 import UIKit
 
 class ListViewController: UITableViewController {
     //1
     private var results: [NSDictionary]?
 
+    //8
     @IBOutlet weak var searchBar: UISearchBar!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,12 +108,14 @@ class ListViewController: UITableViewController {
         return 1
     }
 
+    //9
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return results?.count ?? 0
     }
 
 
+    //10
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ListCell
         if let result = results?[indexPath.row] {
@@ -109,42 +129,6 @@ class ListViewController: UITableViewController {
         }
         return cell
     }
-
-     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 
     // MARK: - Navigation
 
